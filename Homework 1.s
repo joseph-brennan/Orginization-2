@@ -1,5 +1,9 @@
     .equ SWI_Exit,  0x11   ; Set the value of SWI_Exit to 0x11
 start:
+    LDR R1, =a
+
+    LDR R2, =b
+
     LDR R3, =value1
 
     LDR R4, =value2
@@ -8,24 +12,15 @@ start:
 
     LDR R6, =value4
 
-    LDR R1, =a
+    ADD R3, R1, R2 ; add values in r1 and r2, put in r3
 
-    LDR R2, =b
+    SUB R4, R1, R2 ; subtract values in r1 and r2, put in r4
 
-    add    R1, R2, R3
-    sub    R1, R2, R4
-    MUL    R1, R2, R5
-    add    R3, R4, R6
-    add    R5, R6, R6
-    ;ADD R3, R1, R2 ; add values in r1 and r2, put in r3
+    MUL R5, R1, R2 ; multiply values in r1 and r2, put in r5
 
-    ;SUB R4, R1, R2 ; subtract values in r1 and r2, put in r4
+    ADD R6, R3, R4 ; add r3 and r4, store in r6
 
-    ;MUL R5, R1, R2 ; multiply values in r1 and r2, put in r5
-
-    ;ADD R6, R3, R4 ; add r3 and r4, store in r6
-
-    ;ADD R6, R5, R6 ; add r5 and r6, store in r6 (value1 + value2) + value 3
+    ADD R6, R5, R6 ; add r5 and r6, store in r6 (value1 + value2) + value 3
 
 stop:
 
