@@ -1,16 +1,22 @@
     .equ SWI_Exit,  0x11   ; Set the value of SWI_Exit to 0x11
 start:
-    LDR R1, =a
+    LDR R0, =a
+    LDR R1, [R0]
 
-    LDR R2, =b
+    LDR R0, =b
+    LDR R2, [R0]
 
-    LDR R3, =value1
+    LDR R0, =value1
+    LDR R3, [R0]
 
-    LDR R4, =value2
+    LDR R0, =value2
+    LDR R4, [R0]
 
-    LDR R5, =value3
+    LDR R0, =value3
+    LDR R5, [R0]
 
-    LDR R6, =value4
+    LDR R0, =value4
+    LDR R6, [R0]
 
     ADD R3, R1, R2 ; add values in r1 and r2, put in r3
 
